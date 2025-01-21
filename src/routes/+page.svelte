@@ -7,8 +7,10 @@ import img2 from '$lib/assets/custom/img-2.png';
     const mobilePngModules = import.meta.glob('$lib/assets/mobilepng/*.png', { eager: true });
     const desktopPngModules = import.meta.glob('$lib/assets/desktoppng/*.png', { eager: true });
     const desktopSvgModules = import.meta.glob('$lib/assets/desktopsvg/*.svg', { eager: true });
+    const custom = import.meta.glob('$lib/assets/custom/*.svg', { eager: true });
 
     // Extract image URLs for each category
+    const customImages = Object.values(custom).map((module: any) => module.default);
     const mobileSvgImages = Object.values(mobileSvgModules).map((module: any) => module.default);
     const mobilePngImages = Object.values(mobilePngModules).map((module: any) => module.default);
     const desktopPngImages = Object.values(desktopPngModules).map((module: any) => module.default);
@@ -53,13 +55,14 @@ import img2 from '$lib/assets/custom/img-2.png';
 <div>
     <h1  class="text-lg font-semibold py-2">Custom images</h1>
     <div class="w-full flex  items-center gap-2  overflow-x-auto menu-container scrollbar-hidden snap-x scroll-smooth">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
-        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt="">
+        {#each desktopPngImages as image}
+            <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={image} alt="desktoppng" />
+        {/each}
+        {#each desktopPngImages as image}
+            <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={image} alt="desktoppng" />
+        {/each}
+        {#each desktopPngImages as image}
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={image} alt="desktoppng" />
+    {/each}
     </div>
 </div>
