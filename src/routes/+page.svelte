@@ -1,5 +1,8 @@
+
 <script lang="ts">
-    // Import images from different folders
+import img1 from '$lib/assets/custom/img-1.png';
+import img2 from '$lib/assets/custom/img-2.png';
+// Import images from different folders
     const mobileSvgModules = import.meta.glob('$lib/assets/mobilesvg/*.svg', { eager: true });
     const mobilePngModules = import.meta.glob('$lib/assets/mobilepng/*.png', { eager: true });
     const desktopPngModules = import.meta.glob('$lib/assets/desktoppng/*.png', { eager: true });
@@ -45,5 +48,18 @@
         {#each desktopPngImages as image}
             <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={image} alt="desktoppng" />
         {/each}
+    </div>
+</div>
+<div>
+    <h1  class="text-lg font-semibold py-2">Custom images</h1>
+    <div class="w-full flex  items-center gap-2  overflow-x-auto menu-container scrollbar-hidden snap-x scroll-smooth">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt=""><img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img1} alt="">
+        <img class="h-[35px] md:w-[120px] md:h-[45px]  lg:w-[168px] lg:h-[64px] menu-t snap-start" src={img2} alt="">
     </div>
 </div>
